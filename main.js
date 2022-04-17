@@ -16,10 +16,10 @@ camera.transform.position = new Vector3(0, 0);
 const e1 = new Entity();
 e1.transform.position = new Vector3(0, 0);
 e1.mesh.vertexes = [
-	+0.0, +0.0, 
-	+2.0, +3.5,
-	-1.0, +3.5,
-	-1.0, -1.0
+	+0.0, +0.0, +0.0, 
+	+2.0, +3.5, +0.0,
+	-1.0, +3.5, +0.0,
+	-1.0, -1.0, +0.0
 ]; 
 
 world.addEntity(e1);
@@ -31,6 +31,7 @@ Time.update();
 //GAME LOOOOOOOOOOOOOOOOOOOOOOOOOOP
 setInterval(loop, 1000/Time.FPS);
 
+
 function loop() {
 	Display.clearCanvas();
 	Time.update();
@@ -41,7 +42,10 @@ function loop() {
 		.multiply(Time.lastFrameTime*5)		//SPEEDDD
 	);
 
+	Perspectivator.cameraTransform = camera.transform;
+
 	world.entities.forEach((ent) => {
+		Perspectivator.entityTransform = ent.transform;
 		renderer.renderEntity(ent, camera.transform);
 	})
 

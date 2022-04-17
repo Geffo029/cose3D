@@ -10,6 +10,12 @@ class CTX {
 
 	//static loadMesh() {}
 
+	static renderBuffer(mode) {
+
+		let pixelsCoords = Perspectivator.vertexToScreenCoords(this.vtxBuffer[0], mode);
+		this.polygon(pixelsCoords, 'red', false, 5);		//aaoidd
+	}
+
 	static renderVtxBuffer(color, width) {
 		this.polygon(this.vtxBuffer[0], color, false, width);
 	}
