@@ -9,6 +9,7 @@ class World {
 	}
 
 	drawCenter(cameraTransform) {
+		
 		CTX.line(
 			Display.center[0]-Display.meter2Pixel, Display.center[1],
 			Display.center[0]+Display.meter2Pixel, Display.center[1],

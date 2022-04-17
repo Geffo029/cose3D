@@ -3,8 +3,7 @@ class Display {
 	static canvas = null;
 	static backgroundColor = 'black';
 	static center = null;
-	static meter2Pixel = 22;		
-	static hud = new HUD();
+	static meter2Pixel = 22;
 
 
 	static resizeCanvas(width, height) {

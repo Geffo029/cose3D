@@ -1,8 +1,10 @@
 class Mesh {
 	constructor() {
+		this.id = 1;		//cos????
 		this.__vertexes = [];
 		this.__color = 'red';
 	}
+
 
 	set vertexes(vertexes) {
 		this.__vertexes = vertexes;

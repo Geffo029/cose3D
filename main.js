@@ -7,6 +7,7 @@ CTX.ctx = Display.canvas.getContext('2d');
 const renderer = new Renderer();
 const world = new World();
 const camera = new Camera();
+const hud = new HUD();
 
 
 camera.transform.position = new Vector3(0, 0);
@@ -22,7 +23,9 @@ e1.mesh.vertexes = [
 ]; 
 
 world.addEntity(e1);
-
+world.entities.forEach((ent) => {
+	renderer.loadEntity(ent);
+});
 Time.update();
 
 //GAME LOOOOOOOOOOOOOOOOOOOOOOOOOOP
@@ -38,11 +41,12 @@ function loop() {
 		.multiply(Time.lastFrameTime*5)		//SPEEDDD
 	);
 
-	renderer.renderEntity(e1, camera.transform);
+	world.entities.forEach((ent) => {
+		renderer.renderEntity(ent, camera.transform);
+	})
 
-	//Display.hud.grid();
-	world.drawCenter(camera.transform);
-	Display.hud.center();
+	//world.drawCenter(camera.transform);
+	hud.center();
 
 }
 
