@@ -1,14 +1,15 @@
 class Input {
 	static __xAxis = {positive: 'd', negative: 'a'};
-	static __yAxis = {positive: 'w', negative: 's'};
-	static __zAxis = {positive: ' ', negative: null};
+	static __yAxis = {positive: ' ', negative: 'z'};
+	static __zAxis = {positive: 'w', negative: 's'};
 
 	static __keys = {
 		'a': {last: false, now: false},
 		'd': {last: false, now: false},
 		's': {last: false, now: false},
 		'w': {last: false, now: false},
-		' ': {last: false, now: false}
+		' ': {last: false, now: false},
+		'z': {last: false, now: false}
 	};
 
 

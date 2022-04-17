@@ -1,23 +1,21 @@
 class CTX {
 	static ctx = undefined;
-	static vtxBuffer = [];
+	// static vtxBuffer = [];
+	static vtxBuffer = {};
 	//static meshBuffer = [];
 
 
-	static loadVtxBuffer(vtxBuffer) {
-		this.vtxBuffer.push(vtxBuffer);
+	static loadVtxBuffer(id, vtxs) {
+		// this.vtxBuffer.push({id: vtxs});
+		this.vtxBuffer[id] = vtxs;
+		console.log(this.vtxBuffer)
 	}
 
 	//static loadMesh() {}
 
-	static renderBuffer(mode) {
-
-		let pixelsCoords = Perspectivator.vertexToScreenCoords(this.vtxBuffer[0], mode);
+	static renderBuffer(id, mode) {
+		let pixelsCoords = Perspectivator.vertexToPixelsCoords(this.vtxBuffer[id], mode);
 		this.polygon(pixelsCoords, 'red', false, 5);		//aaoidd
-	}
-
-	static renderVtxBuffer(color, width) {
-		this.polygon(this.vtxBuffer[0], color, false, width);
 	}
 
 	static line(xStart, yStart, xEnd, yEnd, width, color) {

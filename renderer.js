@@ -1,14 +1,14 @@
 class Renderer {
 
 	loadEntity(entity) {
-		CTX.loadVtxBuffer(entity.mesh.vertexes);
+		CTX.loadVtxBuffer(entity.id, entity.mesh.vertexes);
 	}
 
-	renderEntity(entity, cameraTransform) {		//DA SPOSTAREERE
-		//let newVertexes = this.editVertexs(entity.mesh.vertexes, entity.transform.position, cameraTransform.position);
+	renderEntity(entity) {	
 		//CTX.loadVtxBuffer(newVertexes);
 		//CTX.renderVtxBuffer(entity.mesh.color, 5);	//aaa
-		CTX.renderBuffer(Perspectivator._2dOrthogonal)
+		//CTX.renderBuffer(entity.id, Perspectivator._2dOrthogonal)
+		 CTX.renderBuffer(entity.id, Perspectivator._3dPerspective);
 	}
 
 }

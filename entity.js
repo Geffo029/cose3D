@@ -1,7 +1,8 @@
 class Entity {
-	constructor() {
+	constructor(id) {
+		this.__id = id;
 		this.__transform = new Transform();
-		this.__mesh = new Mesh();
+		this.__mesh = new Mesh(id);
 	}
 
 	move(dPosition) {
@@ -20,5 +21,9 @@ class Entity {
 	}
 	get mesh() {
 		return this.__mesh;
+	}
+
+	get id() {
+		return this.__id;
 	}
 }

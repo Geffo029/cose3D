@@ -1,6 +1,6 @@
 class Mesh {
-	constructor() {
-		this.id = 1;		//cos????
+	constructor(id) {
+		this.id = id;		//cos????
 		this.__vertexes = [];
 		this.__color = 'red';
 	}
