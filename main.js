@@ -48,13 +48,14 @@ world.entities.forEach((ent) => {
 	renderer.loadEntity(ent);
 });
 
-Time.update();
 
+FileManager.readTextFile('./main.js')
+
+Time.update();
 
 //GAME LOOOOOOOOOOOOOOOOOOOOOOOOOOP
 let STOP = false;
-let loopId = null;
-loopId = setInterval(loop, 1000/Time.FPS);
+let loopId = setInterval(loop, 1000/Time.FPS);
 
 function stop() {
 	STOP = !STOP;

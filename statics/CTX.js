@@ -8,7 +8,7 @@ class CTX {
 	static loadVtxBuffer(id, vtxs) {
 		// this.vtxBuffer.push({id: vtxs});
 		this.vtxBuffer[id] = vtxs;
-		console.log(this.vtxBuffer)
+		//console.log(this.vtxBuffer)
 	}
 
 	//static loadMesh() {}

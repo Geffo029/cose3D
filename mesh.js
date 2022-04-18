@@ -1,4 +1,7 @@
 class Mesh {
+
+
+
 	constructor(id) {
 		this.id = id;		//cos????
 		this.__vertexes = [];
@@ -18,5 +21,9 @@ class Mesh {
 	}
 	get color() {
 		return this.__color;
+	}
+
+	static meshFromOBJ() {
+		
 	}
 }
